@@ -132,7 +132,7 @@ const ProjectDetails = ({ project, onClose }) => {
                         controls
                         className={`w-full ${isFullscreen ? 'h-[70vh]' : 'h-96'} object-cover rounded-lg`}
                       >
-                        <source src="/projects/haya/WhatsApp Video 2025-09-21 at 02.32.04_22d35733.mp4" type="video/mp4" />
+                        <source src={encodeURI('/projects/haya/WhatsApp Video 2025-09-21 at 02.32.04_22d35733.mp4')} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     ) : (
