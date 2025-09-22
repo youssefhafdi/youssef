@@ -137,8 +137,10 @@ const ProjectDetails = ({ project, onClose }) => {
                       </video>
                     ) : (
                       <img
-                        src={project.images[currentImageIndex]}
+                        src={encodeURI(project.images[currentImageIndex])}
                         alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'}`}
                       />
                     )}
@@ -250,8 +252,10 @@ const ProjectDetails = ({ project, onClose }) => {
                           }`}
                         >
                           <img
-                            src={image}
+                            src={encodeURI(image)}
                             alt={`Thumbnail ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover"
                           />
                         </motion.button>

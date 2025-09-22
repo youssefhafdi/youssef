@@ -15,12 +15,16 @@ const ProjectCard = ({ project, index, onClick }) => {
       <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 overflow-hidden">
         {project.images && project.images.length > 0 ? (
           <img
-            src={project.images[0]}
+            src={encodeURI(project.images[0])}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             onError={(e) => {
               e.target.style.display = 'none'
-              e.target.nextSibling.style.display = 'flex'
+              if (e.target.nextSibling) {
+                e.target.nextSibling.style.display = 'flex'
+              }
             }}
           />
         ) : null}
