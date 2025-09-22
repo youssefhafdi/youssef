@@ -29,7 +29,7 @@ const Hero = () => {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary-500 to-purple-500 p-1">
               <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center overflow-hidden">
                 {/* Uncomment the next line and comment out the emoji when you add your profile image */}
-                <img src="public\profile_img.png" alt="Youssef Hafdi" className="w-full h-full object-cover" />
+                <img src="/profile_img.png" alt="Youssef Hafdi" className="w-full h-full object-cover" />
                 
               </div>
             </div>
@@ -67,7 +67,7 @@ const Hero = () => {
               </motion.button>
               
               <motion.a
-                href="public\cvyoussef.pdf"
+                href="/cvyoussef.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
