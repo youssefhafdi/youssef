@@ -28,9 +28,20 @@ const Contact = () => {
     setResult('')
     setErrorMessage('')
 
+    // Récupère la clé d'accès depuis les variables d'environnement Vite
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
+
+    // Valide le format UUID de la clé (exigé par Web3Forms)
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+
+    if (!accessKey || !uuidRegex.test(accessKey)) {
+      setIsSubmitting(false)
+      setErrorMessage("Clé Web3Forms absente ou invalide. Configure VITE_WEB3FORMS_KEY (UUID).")
+      return
+    }
+
     const formDataToSend = new FormData()
-    // ⚠️ Mets ton vrai access_key de Web3Forms ici
-    formDataToSend.append("access_key", "TON_ACCESS_KEY_ICI")
+    formDataToSend.append("access_key", accessKey)
     formDataToSend.append("name", formData.name)
     formDataToSend.append("email", formData.email)
     formDataToSend.append("subject", formData.subject)
