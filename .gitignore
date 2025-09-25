@@ -8,9 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
-*.local
+
 
 # Editor directories and files
 .vscode/*
@@ -30,13 +28,7 @@ dist-ssr
 .env.test.local
 .env.production.local
 
-# Build outputs
-build/
-out/
 
-# Cache
-.cache/
-.parcel-cache/
 
 # Coverage directory used by tools like istanbul
 coverage/
@@ -82,7 +74,6 @@ dist
 
 # Gatsby files
 .cache/
-public
 
 # Storybook build outputs
 .out
